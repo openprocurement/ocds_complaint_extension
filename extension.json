@@ -6,7 +6,7 @@
     "en": "Complaints to tender conditions and their resolutions"
   },
   "documentationUrl": {
-    "en": "https://github.com/yanakapatsila/ocds_complaint_extension/"
+    "en": ""
   },
   "schemas": [
     "release-schema.json"
