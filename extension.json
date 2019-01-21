@@ -1,0 +1,23 @@
+{
+  "name": {
+    "en": "Complaint"
+  },
+  "description": {
+    "en": "Complaints to tender conditions and their resolutions"
+  },
+  "documentationUrl": {
+    "en": "https://github.com/yanakapatsila/ocds_complaint_extension/"
+  },
+  "schemas": [
+    "release-schema.json"
+  ],
+  "codelists": [
+    "complaintRejectReason.csv",
+    "complaintResolutionType.csv",
+    "complaintStatus.csv",
+    "complaintType.csv"
+  ],
+  "compatibility": [
+    "1.1"
+  ]
+}

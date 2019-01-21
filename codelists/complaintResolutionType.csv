@@ -1,0 +1,4 @@
+Code,Title,Description
+invalid,Invalid,Claim has not been taken into consideration due to being invalid.
+declined,Declined,Claim has been declined by Procuring Entity.
+resolved,Resolved,The decision has been registered in the CDB.
