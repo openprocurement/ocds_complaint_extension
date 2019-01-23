@@ -10,6 +10,8 @@ Complaint is represented by the **`tender/complaints`** and/or **`award/complain
 
 The fields introduced by this extension are:
 
+* **`complaints/id`** - The id of the complaint.
+
 * **`complaints/title`** - The title of the complaint.
 
 * **`complaints/status`** - The current status of the complaint. This field's codelist values are: `draft`, `claim`, `answered`, `pending`, `invalid`, `declined`, `resolved`, `cancelled`, `accepted`, `stopped`.
@@ -61,6 +63,8 @@ boolean value.
 * **`complaints/resolutionType`** - The type of resolution made by the Procuring entity. Possible values are: `invalid`, `declined`, `resolved`.
 
 * **`complaints/resolution`** - The resolution made by the Procuring entity.
+
+* **`tender/complaintPeriod`** and **`awards/complaintPeriod`** - The timeframe when complaints can be submitted.
 
 ## Examples
 The example below shows a complaint in tender.
