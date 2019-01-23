@@ -1,85 +1,66 @@
 # Complaint
 
-The complaint extension is used to provide structured data on complaints to 
-tender conditions and their resolutions.
+The **complaint extension** of the Open Contracting Data Standard is used to provide structured data for claims and complaints regarding tender conditions or violations.
 
-## Overview
-Complaint can be represented using an array of complaint blocks in the 
-complaints field of the tender or award section of an OCDS release.
+Note that **complaint** is an official appeal to the Complaint Review body with a demand to eliminate violations that, presumably (according to the Complainant), had been made by Procuring entity. A **claim** is a formal appeal to a Procuring entity to eliminate violations that, presumably (according to the Complainant), had been made by the Procuring entity.
 
-The current status of the complaint can be represented using the 
-complaints/status field using values from the complaint status codelist.
+Complaint is represented by the `tender/complaints` and/or `award/complaints` blocks of an OCDS release where each `complaint` object contains twenty six fields.
 
-The date of the tenderer action should be provided as string using the 
-complaints/tendererActionDate field.
+## Additional fields
 
-The indicator whether the complaint was satisfied should be represented as 
-boolean value of complaints/satisfied field.
+The fields introduced by this extension are:
 
-The action of tenderer should be provided as string using the the 
-complaints/tendererAction field.
+* `complaints/title` - The title of the complaint.
 
-The date when claim was submitted can be represented using the 
-complaints/dateSubmitted field.
+* `complaints/status` - The current status of the complaint. This field's codelist values are: `draft`, `claim`, `answered`, `pending`, `invalid`, `declined`, `resolved`, `cancelled`, `accepted`, `stopped`.
 
-The place of reviewing the complaint should be provided using the 
-complains/reviewPlace field.
+* `complaints/date` - The date when the complaint was posted.
 
-All documents and attachments related to the complaint can be represented using 
-the complaints/documents field. The value of it can be array of unique documents.
+* `complaints/dateSubmitted` - The date when claim/complaint was submitted.
 
-The title of the complaint should be provided using the complaints/title field.
+* `complaints/documents` - All documents and attachments related to the complaint. The field's value can be an array of unique documents.
 
-The decision of a reviewer on the complaint can be represented using the 
-complaints/decision field.
+* `complaints/type` - The type of the complaint. Possible values are: `claim`, `complaint`.
 
-The indicator whether the complaint was accepted should be represented as 
-boolean value of complaints/acceptance field.
+* `complaints/relatedLot` - An identifier of the related lot.
 
-The date of claim to complaint escalation can be provided as string using the
-complaints/dateEscalated field.
+* `complaints/description` - The description of the issue or violation. 
 
-The description of reject reason should be represented using the 
-complaints/rejectReasonDescription field.
+* `complaints/author` - The organization filing a complaint.  
 
-The reason for cancelling the complaint can be provided using the 
-complaints/cancellationReason field. 
+* `complaints/tendererActionDate` - The date of the tenderer action. Should be provided as a string.
 
-The date when Procuring entity answered the claim should be represented using 
-the  complaints/dateAnswered field. 
+* `complaints/tendererAction` - The action of the tenderer. Should be provided as a string.
 
-The type of the complaint can be represented using the 
-complaints/type field using values from the complaint type codelist.
+* `complaints/satisfied` - The indicator whether the claim/complaint was satisfied. Should be represented as 
+a boolean value.
 
-An identifier of the related lot should be provided using the 
-complaints/relatedLot field.
+* `complains/reviewPlace` - The place of the Complaint review (is arbitrary filled in by the user).
 
-The description of the issue can be represented using the complaints/description.
+* `complaint/reviewDate` - The date when the complaint was reviewed.
 
-The date of cancelling the complaint should be provided using the 
-complaints/dateCancelled field.
+* `complaints/acceptance` - The indicator whether the complaint was accepted. Should be represented as a
+boolean value.
 
-The date of posting the complaint can be represented using the 
-complaints/date field.
+* `complaints/dateEscalated` - The date of escalation from claim to complaint .
 
-The date when a decision on the complaint was made should be represented using 
-the complaints/dateDecision field.
+* `complaints/cancellationReason` - The reason for cancelling the complaint. At any time before the publication of the Complaint Review body’s decision, the Complainant can withdraw his complaint.
 
-The organization filing a complaint can be provided using the complaints/author 
-field. It is required.
+* `complaints/dateCancelled` - The date when the complaint was cancelled.
+ 
+* `complaints/dateAnswered` - The date when Procuring entity answered the claim. 
 
-The reasons of rejecting the complaint should be represented using the 
-complaints/rejectReason field using values from the complaint reject reason 
-codelist.
+* `complaints/decision` - The decision of a reviewer on the complaint.
 
-The type of resolution can be provided using the complaints/resolutionType 
-field using values from the complaint resolution type codelist.
+* `complaints/dateDecision` - The date when a decision on the complaint was made.
 
-The resolution of Procuring entity should be represented using the 
-complaints/resolution field.
+* `complaints/rejectReason` - The reasons of rejecting the complaint, i.e. the complaint does not meet the requirements of the Law, fee was not received, the procuring entity eliminated violations.
 
-The date of reviewing the complaint can be provided using the 
-complaint/reviewDate field.
+* `complaints/rejectReasonDescription` - The description of the reject reason (in arbitrary form).
+
+* `complaints/resolutionType` - The type of resolution made by the Procuring entity. Possible values are: `invalid`, `declined`, `resolved`.
+
+* `complaints/resolution` - The resolution made by the Procuring entity.
 
 ## Examples
 The example below shows a complaint in tender.
